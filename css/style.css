@@ -131,8 +131,7 @@ i:hover + iframe {
         width: 100%;
         margin: 0;
         box-sizing: border-box;
-        padding:  40px 0;
-        grid-template: repeat(5, auto) / 1fr 1fr;
+        padding:  40px 15px;
     }
     label {
         display: none;
@@ -158,5 +157,34 @@ i:hover + iframe {
     }
     .hidden-field {
         display: none;
+    }
+    .field {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .mail-list {
+        grid-column: 1 / 3;
+        justify-content: center;
+    }
+    #wrapper {
+        align-items: center;
+        justify-content: center;
+    }
+    input[type="submit"] {
+        grid-column: 1 / 3;
+        margin: 20px auto;
+    }
+    #help {
+        margin-left: 20px;
+    }
+    #disclaimer {
+        margin: 0;
+    }
+    .field {
+        padding-bottom: 0;
+        padding-top: 20px;
+    }
+    #disclaimer, #help {
+        margin-bottom: 20px;
     }
 }
