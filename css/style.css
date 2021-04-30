@@ -10,6 +10,12 @@ header, footer {
     justify-content: center;
 }
 
+footer {
+    justify-content: space-between;
+    padding: 20px;
+}
+
+
 form {
     padding: 50px;
     width: 100%;
@@ -126,8 +132,13 @@ i:hover + iframe {
 }
 
 img {
-    height: 140px;
+    width: 140px;
     margin: 20px 0;
+}
+.icon {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
 }
 @media (max-width: 700px) {
     form {
@@ -191,13 +202,27 @@ img {
     #disclaimer, #help {
         margin-bottom: 20px;
     }
-    #desktop {
+    .desktop {
         display: none;
     }
 }
 
 @media (min-width: 700px) {
-    #mobile {
+    .mobile {
         display: none;
+    }
+    header {
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    div.desktop {
+        width: 140px;
+    }
+    div.wide {
+        width: 400px;
+        text-align: center;
+    }
+    #designer {
+        align-self: flex-end;
     }
 }
