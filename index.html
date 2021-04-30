@@ -16,36 +16,68 @@
         <form>
             <fieldset>
                 <legend>Contact Us</legend>
-                <div class="field">
-                    <label for="name">NAME</label>
-                    <input type="text" name="name">
-                </div>
-                <div class="field">
-                    <label for="email">EMAIL ADDRESS</label>
-                    <input type="text" name="email">
-                </div>
-                <div class="field">
-                    <label for="phone">PHONE NUMBER</label>
-                    <input type="text" name="phone">
-                </div>
-                <div class="field">
-                    <label for="message">MESSAGE</label>
-                    <textarea name="message" id="message-box" cols="30" rows="10"></textarea>
-                </div>
-                <div class="mail-list">
-                    <label for="mail-list">Subscribe to the mailing list?</label>
-                    <input type="checkbox" name="mail-list" id="mail-list-box">
-                    <input type="submit" value="Submit">
+                <div id="wrapper">
+                    <div class="field">
+                        <input type="text" 
+                                name="name" 
+                                pattern="^([A-Za-z]+[,.]?[ ]?|[A-Za-z]+['-]?)+$"
+                                maxlength="40"
+                                title="Please enter a valid name."
+                                required>
+                        <label for="name">NAME</label>
+                        <div class="error" id="name-error"></div>
+                    </div>
+                    <div class="field">
+                        <input type="email" 
+                                name="email"
+                                title="Please enter a valid email address."
+                                required>
+                        <label for="email">EMAIL ADDRESS</label>
+                        <div class="error" id="email-error"></div>
+                    </div>
+                    <div class="field">
+                        <input type="text"
+                                name="phone"
+                                pattern="[0-9]{6,12}"
+                                title="Please enter a valid phone number with no spaces or symbols">
+                        <label for="phone">PHONE NUMBER</label>
+                        <div class="error" id="phone-error"></div>
+                    </div>
+                    <div class="field hidden-field">
+                        <select name="industry">
+                            <option>Choose one...</option>
+                            <option>Agriculture</option>
+                            <option>Mining</option>
+                            <option>Construction</option>
+                            <option>Utilities</option>
+                            <option>Logging</option>
+                            <option>Manufacturing</option>
+                            <option>Other</option>
+                        </select>
+                        <label for="industry">INDUSTRY</label>
+                    </div>
+                    <div class="field">
+                        <textarea name="message" 
+                                id="message-box" 
+                                cols="30" 
+                                rows="10"
+                                minlength="20"
+                                title="Please enter at least 20 characters."
+                                required></textarea>
+                        <label for="message">MESSAGE</label>
+                        <div class="error" id="message-error"></div>
+                    </div>
+                    <div class="mail-list">
+                        <input type="checkbox" name="mail-list" id="mail-list-box">
+                        <label for="mail-list">Subscribe to the mailing list?</label>
+                    </div>
+                    <input type="submit" value="Get in Touch">
                 </div>
             </fieldset>
         </form>
     </main>
     <footer>
         <p>Stuff here for the footer</p>
-        <div id=stupidcheckbox>
-            <input type="checkbox" id="checkbox">
-            <i class="fas fa-paper-plane"></i>
-        </div>
     </footer>
 </body>
 </html>
