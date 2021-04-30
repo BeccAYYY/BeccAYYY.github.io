@@ -7,6 +7,7 @@
     <title>AT3 Form</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <script src="js.js" defer></script>
 </head>
 <body>
     <header>
@@ -16,6 +17,7 @@
         <form>
             <fieldset>
                 <legend>Contact Us</legend>
+                <p>Whilst we are still setting up the PHEM website, please feel free to use this form to contact us.</p>
                 <div id="wrapper">
                     <div class="field">
                         <input type="text" 
@@ -23,6 +25,7 @@
                                 pattern="^([A-Za-z]+[,.]?[ ]?|[A-Za-z]+['-]?)+$"
                                 maxlength="40"
                                 title="Please enter a valid name."
+                                placeholder="Name..."
                                 required>
                         <label for="name">NAME</label>
                         <div class="error" id="name-error"></div>
@@ -31,6 +34,7 @@
                         <input type="email" 
                                 name="email"
                                 title="Please enter a valid email address."
+                                placeholder="Name..."
                                 required>
                         <label for="email">EMAIL ADDRESS</label>
                         <div class="error" id="email-error"></div>
@@ -45,7 +49,7 @@
                     </div>
                     <div class="field hidden-field">
                         <select name="industry">
-                            <option>Choose one...</option>
+                            <option id="choose">Choose one...</option>
                             <option>Agriculture</option>
                             <option>Mining</option>
                             <option>Construction</option>
@@ -72,6 +76,8 @@
                         <label for="mail-list">Subscribe to the mailing list?</label>
                     </div>
                     <input type="submit" value="Get in Touch">
+                    <p>HELP</p>
+                    <p id="disclaimer">* denotes a required field</p>
                 </div>
             </fieldset>
         </form>
