@@ -3,7 +3,9 @@ body {
     margin: 0;
     background-color: rgb(231, 231, 231);
 }
-header, footer {
+
+header,
+footer {
     background-color: #013542;
     color: White;
     display: flex;
@@ -23,6 +25,7 @@ form {
     margin: auto;
     background-color: white;
 }
+
 .field {
     display: flex;
     flex-direction: column;
@@ -35,6 +38,7 @@ label {
     font-size: 0.6em;
     order: -1;
 }
+
 fieldset {
     border: none;
     padding: 0;
@@ -53,7 +57,8 @@ legend {
 }
 
 
-input:required ~ label::after, textarea:required ~ label::after {
+input:required~label::after,
+textarea:required~label::after {
     content: " *";
     font-size: 1.5em;
 }
@@ -69,7 +74,9 @@ input:required ~ label::after, textarea:required ~ label::after {
     align-items: center;
 }
 
-input, textarea, select {
+input,
+textarea,
+select {
     font-size: 1.2em;
 }
 
@@ -96,13 +103,13 @@ input[type="submit"] {
     opacity: 0;
 }
 
-input:invalid:not(:placeholder-shown), 
+input:invalid:not(:placeholder-shown),
 textarea:invalid:not(:placeholder-shown) {
     border-color: red;
     border-style: solid;
 }
 
-input:valid:not(:placeholder-shown):not([type="submit"]), 
+input:valid:not(:placeholder-shown):not([type="submit"]),
 textarea:valid:not(:placeholder-shown) {
     border-color: green;
     border-style: solid;
@@ -120,12 +127,14 @@ input[type="submit"]:active {
 #help {
     position: relative;
 }
+
 iframe {
     display: none;
     width: 80vw;
     max-width: 500px;
 }
-i:hover + iframe {
+
+i:hover+iframe {
     display: block;
     position: absolute;
     bottom: 60px;
@@ -135,73 +144,96 @@ img {
     width: 140px;
     margin: 20px 0;
 }
+
 .icon {
     position: absolute;
     bottom: 30px;
     right: 30px;
 }
+
 @media (max-width: 700px) {
     form {
         max-width: none;
         width: 100%;
         margin: 0;
         box-sizing: border-box;
-        padding:  40px 15px;
+        padding: 40px 15px;
     }
+
     label {
         display: none;
     }
+
     ::placeholder {
         opacity: 1;
     }
-    input[type="checkbox"] ~ label {
+
+    input[type="checkbox"]~label {
         display: initial;
     }
 
     textarea::placeholder {
         font-family: sans-serif;
     }
-    input, textarea, select, legend {
+
+    input,
+    textarea,
+    select,
+    legend {
         font-size: 2em;
     }
+
     p {
         font-size: 1.5em;
     }
-    label, #disclaimer {
+
+    label,
+    #disclaimer {
         font-size: 1em;
     }
+
     .hidden-field {
         display: none;
     }
+
     .field {
         padding-left: 0;
         padding-right: 0;
     }
+
     .mail-list {
         grid-column: 1 / 3;
         justify-content: center;
     }
+
     #wrapper {
         align-items: center;
         justify-content: center;
     }
+
     input[type="submit"] {
         grid-column: 1 / 3;
         margin: 20px auto;
     }
+
     #help {
         margin-left: 20px;
     }
+
     #disclaimer {
         margin: 0;
     }
+
     .field {
         padding-bottom: 0;
         padding-top: 20px;
     }
-    #disclaimer, #help {
+
+    #disclaimer,
+    #help {
         margin-bottom: 20px;
     }
+
     .desktop {
         display: none;
     }
@@ -211,17 +243,21 @@ img {
     .mobile {
         display: none;
     }
+
     header {
         align-items: center;
         justify-content: space-evenly;
     }
+
     div.desktop {
         width: 140px;
     }
+
     div.wide {
         width: 400px;
         text-align: center;
     }
+
     #designer {
         align-self: flex-end;
     }
