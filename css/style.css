@@ -46,9 +46,6 @@ legend {
     font-size: 0.8em;
 }
 
-input:invalid:not(:placeholder-shown) ~ .error {
-    background-color: purple;
-}
 
 input:required ~ label::after, textarea:required ~ label::after {
     content: " *";
@@ -58,11 +55,12 @@ input:required ~ label::after, textarea:required ~ label::after {
 #wrapper {
     display: grid;
     grid-template: repeat(6, auto) / 1fr 1fr;
+    width: 100%;
 }
 
 .mail-list {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
 }
 
 input, textarea, select {
@@ -86,4 +84,65 @@ input[type="submit"] {
 #disclaimer {
     font-size: 0.8em;
     text-align: right;
+}
+
+::placeholder {
+    opacity: 0;
+}
+
+input:invalid:not(:placeholder-shown), 
+textarea:invalid:not(:placeholder-shown) {
+    border-color: red;
+    border-style: solid;
+}
+
+input:valid:not(:placeholder-shown):not(input[type="submit"]), 
+textarea:valid:not(:placeholder-shown) {
+    border-color: green;
+    border-style: solid;
+}
+
+textarea {
+    resize: none;
+}
+
+input[type="submit"]:active {
+    background-color: #044858;
+    transition: all 0.3s;
+}
+
+@media (max-width: 700px) {
+    form {
+        max-width: none;
+        width: 100%;
+        margin: 0;
+        box-sizing: border-box;
+        padding:  40px 0;
+        grid-template: repeat(5, auto) / 1fr 1fr;
+    }
+    label {
+        display: none;
+    }
+    ::placeholder {
+        opacity: 100;
+    }
+    input[type="checkbox"] ~ label {
+        display: initial;
+    }
+
+    textarea::placeholder {
+        font-family: sans-serif;
+    }
+    input, textarea, select, legend {
+        font-size: 2em;
+    }
+    p {
+        font-size: 1.5em;
+    }
+    label, #disclaimer {
+        font-size: 1em;
+    }
+    .hidden-field {
+        display: none;
+    }
 }

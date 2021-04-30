@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AT3 Form</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
-    <script src="js.js" defer></script>
+    <script src="js/js.js" defer></script>
 </head>
 <body>
     <header>
@@ -21,34 +21,44 @@
                 <div id="wrapper">
                     <div class="field">
                         <input type="text" 
+                                id="name"
                                 name="name" 
                                 pattern="^([A-Za-z]+[,.]?[ ]?|[A-Za-z]+['-]?)+$"
                                 maxlength="40"
                                 title="Please enter a valid name."
                                 placeholder="Name..."
-                                required>
+                                onchange="errorDiv(this, 'name-error')"
+                                required
+                                >
                         <label for="name">NAME</label>
                         <div class="error" id="name-error"></div>
                     </div>
                     <div class="field">
                         <input type="email" 
+                                id="email"
                                 name="email"
                                 title="Please enter a valid email address."
-                                placeholder="Name..."
+                                placeholder="Email..."
+                                onchange="errorDiv(this, 'email-error')"
                                 required>
                         <label for="email">EMAIL ADDRESS</label>
                         <div class="error" id="email-error"></div>
                     </div>
                     <div class="field">
                         <input type="text"
+                                id="phone"
                                 name="phone"
                                 pattern="[0-9]{6,12}"
-                                title="Please enter a valid phone number with no spaces or symbols">
+                                placeholder="Phone number..."
+                                title="Please enter a valid phone number with no spaces or symbols"
+                                onchange="errorDiv(this, 'phone-error')"
+                                >
                         <label for="phone">PHONE NUMBER</label>
                         <div class="error" id="phone-error"></div>
                     </div>
                     <div class="field hidden-field">
-                        <select name="industry">
+                        <select name="industry"
+                                id="industry">
                             <option id="choose">Choose one...</option>
                             <option>Agriculture</option>
                             <option>Mining</option>
@@ -62,22 +72,24 @@
                     </div>
                     <div class="field">
                         <textarea name="message" 
-                                id="message-box" 
+                                id="message" 
                                 cols="30" 
                                 rows="10"
                                 minlength="20"
+                                placeholder="Message..."
                                 title="Please enter at least 20 characters."
+                                onchange="errorDiv(this, 'message-error')"
                                 required></textarea>
                         <label for="message">MESSAGE</label>
                         <div class="error" id="message-error"></div>
                     </div>
+                    <p>HELP</p>
+                    <p id="disclaimer">* denotes a required field</p>
                     <div class="mail-list">
-                        <input type="checkbox" name="mail-list" id="mail-list-box">
+                        <input type="checkbox" name="mail-list" id="mail-list">
                         <label for="mail-list">Subscribe to the mailing list?</label>
                     </div>
                     <input type="submit" value="Get in Touch">
-                    <p>HELP</p>
-                    <p id="disclaimer">* denotes a required field</p>
                 </div>
             </fieldset>
         </form>
